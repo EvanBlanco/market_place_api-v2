@@ -31,11 +31,29 @@ group :development do
 	gem 'sqlite3'
 end
 
+# group :test do
+#   gem "rspec-rails", "~> 2.14"
+#   gem "factory_girl_rails"
+#   gem 'ffaker'
+#   gem "shoulda-matchers"
+# end
+
 group :test do
-  gem "rspec-rails", "~> 2.14"
-  gem "factory_girl_rails"
-  gem 'ffaker'
+  gem "rspec-rails"
   gem "shoulda-matchers"
 end
 
+group :test, :development do
+  gem "factory_girl_rails"
+  gem 'ffaker'
+end
+
+#devise database gem
 gem 'devise'
+
+#Sabisu gems
+gem 'sabisu_rails', github: "IcaliaLabs/sabisu-rails"
+gem 'compass-rails'
+gem 'furatto'
+gem 'font-awesome-rails'
+gem 'simple_form'
