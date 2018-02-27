@@ -1,4 +1,5 @@
 class Api::V1::UsersController < ApplicationController
+	before_action :authenticate_with_token!, only: [:update, :destroy]
 	respond_to :json
 
 	def index
@@ -32,6 +33,11 @@ class Api::V1::UsersController < ApplicationController
 		user.destroy
 		head 204
 	end
+
+	def destroy
+    	current_user.destroy
+    	head 204
+  	end
 
 
 	private
