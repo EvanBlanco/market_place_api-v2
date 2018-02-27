@@ -15,6 +15,7 @@ describe Api::V1::SessionsController do
 
 		it { should respond_with 200 }
 	end
-end
 
 end
+
+
