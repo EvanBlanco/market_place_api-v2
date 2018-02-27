@@ -35,16 +35,16 @@ class Api::V1::UsersController < ApplicationController
 	end
 
 	def destroy
-    	current_user.destroy
-    	head 204
-  	end
+		current_user.destroy
+		head 204
+	end
 
 
 	private
 
-		def user_params
-			params.require(:user).permit(:email, :password, :password_confirmation)
-		end
+	def user_params
+		params.require(:user).permit(:email, :password, :password_confirmation)
+	end
 
 	
 end
