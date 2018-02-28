@@ -18,6 +18,9 @@ describe User do
 			3.times { FactoryGirl.create :product, user: @user }
 		end
 
+		it { should have_many(:products) }
+		it { should have_many(:orders) }
+
 		it "destroys the associated products on self destruct" do
 			products = @user.products
 			@user.destroy
