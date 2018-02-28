@@ -7,8 +7,8 @@ class Api::V1::ProductsController < ApplicationController
 	end
 
 	def index
-    products = params[:product_ids].present? ? Product.find(params[:product_ids]) : Product.all
-    respond_with Product.search(params)
+    products = Product.search(params).page(params[:page]).per(params[:per_page])
+    render json: products, meta: pagination(products, params[:per_page])
   end
 
 	def create

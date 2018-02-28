@@ -22,6 +22,9 @@ gem 'jquery-rails'
 #active model serializers (API gems)
 gem 'active_model_serializers'
 
+#paginating gem
+gem 'kaminari'
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
